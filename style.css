@@ -42,25 +42,34 @@ nav a:hover {
     visibility: visible !important;
 }
 
-/* Header */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
 header {
     background: url('img/bg-banner.webp') no-repeat center center/cover;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .banner-container {
-    width: 60%;
+    width: 100%;
     height: 90vh;
     display: flex;
     justify-content: center;
-    margin: auto;
-    flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 .text-banner {
-    text-align: center;
+    width: 100%;
 }
 
 .text-banner h1 {
@@ -153,13 +162,17 @@ header {
 
 /* Nilai */
 .nilai {
-    height: 100vh;
+    min-height: 100vh; /* Tinggi minimum untuk mencegah overlap */
     background: url('file_pendukung2/BG.webp') no-repeat center center;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 50px 0; /* Tambah padding untuk memberi ruang */
+    position: relative; /* Untuk kontrol layout */
+    z-index: 1; /* Pastikan berada di atas elemen lain */
 }
+
 
 .heading-nilai span {
     color: #ffaa00;
@@ -247,6 +260,40 @@ header {
     background-image: url('file_pendukung2/icons/circle-blue.svg');
     opacity: 1;
     transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 768px) {
+    .nilai .d-flex {
+        flex-direction: column; /* Susun ke bawah */
+        align-items: center;
+    }
+
+    .nilai .card {
+        margin-bottom: 20px;
+        width: 80%; /* Lebar kartu di layar yang lebih kecil */
+    }
+
+    .nilai {
+        min-height: auto; /* Ubah tinggi agar menyesuaikan konten */
+        padding-bottom: 100px; /* Tambah jarak di bawah agar tidak menempel */
+    }
+}
+
+@media (max-width: 576px) {
+    .nilai .d-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nilai .card {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+
+    .nilai {
+        min-height: auto;
+        padding-bottom: 150px; /* Tambah lebih banyak jarak pada layar sangat kecil */
+    }
 }
 
 /* Contact Section */
