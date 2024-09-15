@@ -300,7 +300,7 @@ header {
     cursor: pointer;
     color: #fff;
     width: 200px;
-    height: 280px;
+    min-height: 280px; /* Minimum height untuk semua card */
     border-radius: 20px;
     transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -308,15 +308,19 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 30px;
+    text-align: center;
+    padding: 20px 15px; /* Padding yang lebih besar untuk teks */
     position: relative;
+    overflow: hidden; /* Pastikan konten tidak keluar */
+    word-wrap: break-word; /* Menghindari teks panjang keluar */
 }
 
 /* Default Icon Styling */
-.nilai .card img {
-    width: 50px;
-    height: 50px;
-    transition: transform 0.4s ease, opacity 0.4s ease;
+.nilai .card:hover {
+    transform: scale(1.05);
+    background-color: #fff;
+    color: #0072ff;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Hover Effects */
@@ -347,7 +351,47 @@ header {
     opacity: 0;
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
+.nilai .card h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #fff; /* Warna teks putih yang kontras */
+    word-wrap: break-word;
+}
 
+/* Styling untuk p (Paragraf) */
+.nilai .card p {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8); /* Warna teks lebih terang */
+    margin: 0;
+    padding: 0 10px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+.nilai .card:hover h2 {
+    color: #0072ff; /* Warna judul berubah saat hover */
+}
+
+.nilai .card:hover p {
+    color: #0072ff; /* Warna paragraf berubah saat hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .nilai .card {
+        width: 150px; /* Ubah lebar card di layar lebih kecil */
+        padding: 15px; /* Sesuaikan padding di layar kecil */
+    }
+
+    .nilai .card h2 {
+        font-size: 1.2rem; /* Ukuran font lebih kecil untuk layar mobile */
+    }
+
+    .nilai .card p {
+        font-size: 0.8rem; /* Sesuaikan ukuran teks untuk layar kecil */
+    }
+}
 .nilai .card.running:hover::before {
     display: block;
     background-image: url('file_pendukung2/icons/running-blue.svg');
@@ -384,6 +428,18 @@ header {
         min-height: auto; /* Ubah tinggi agar menyesuaikan konten */
         padding-bottom: 100px; /* Tambah jarak di bawah agar tidak menempel */
     }
+    .nilai .card {
+        width: 180px;
+        padding: 15px; /* Sesuaikan padding untuk layar lebih kecil */
+    }
+
+    .nilai .card h2 {
+        font-size: 1.2rem; /* Ukuran font lebih kecil */
+    }
+
+    .nilai .card p {
+        font-size: 0.85rem; /* Ukuran font lebih kecil */
+    }
 }
 
 @media (max-width: 576px) {
@@ -400,6 +456,18 @@ header {
     .nilai {
         min-height: auto;
         padding-bottom: 150px; /* Tambah lebih banyak jarak pada layar sangat kecil */
+    }
+    .nilai .card {
+        width: 150px;
+        padding: 15px;
+    }
+
+    .nilai .card h2 {
+        font-size: 1.1rem; /* Ukuran font lebih kecil */
+    }
+
+    .nilai .card p {
+        font-size: 0.8rem; /* Ukuran font lebih kecil */
     }
 }
 
