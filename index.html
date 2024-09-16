@@ -1,208 +1,723 @@
-    <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-        <title>HompePage Sederhana</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <title>HomePage Logitech - Dark Mode</title>
+</head>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,300;1,800&display=swap");
 
-    <body>
-        <!-- Navbar -->
-        <!-- Navbar -->
-<nav class="navbar-light p-md-4 p-2">
-    <img src="img/skillku-logo-light.png" alt="Logo skillku">
-    <ul class="d-none d-md-flex">
-        <li><a href="#beranda">Beranda</a></li>
-        <li><a href="#tentang-kami">Tentang Kami</a></li>
-        <li><a href="#visi-misi">Visi Misi</a></li>
-        <li><a href="#nilai">Nilai</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="navbar-toggler d-block d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+/* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+    box-sizing: border-box;
+}
 
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+/* Navbar */
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark mode background */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav img {
+    height: 40px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff; /* Change text to white */
+    font-size: 18px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ff7700;
+}
+
+.navbar-toggler {
+    background-color: #ff7700;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.navbar-toggler-icon {
+    color: white;
+}
+
+.offcanvas ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.offcanvas ul li {
+    margin: 15px 0;
+}
+
+.offcanvas ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Offcanvas Menu Styling */
+.offcanvas-header {
+    padding: 20px 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Dark mode adjustment */
+    background-color: #333333;
+}
+
+.offcanvas-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff; /* Dark mode adjustment */
+}
+
+.offcanvas-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    background-color: #1f1f1f; /* Dark mode */
+}
+
+.offcanvas ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.offcanvas ul li {
+    margin: 20px 0;
+}
+
+.offcanvas ul li a {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #ffffff; /* Dark mode adjustment */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.offcanvas ul li a:hover {
+    color: #ff7700; /* Hover effect for dark mode */
+}
+
+.offcanvas ul li a.active {
+    color: #ff7700;
+    font-weight: 700;
+}
+
+/* Close Button */
+.btn-close {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .offcanvas ul li a {
+        font-size: 1.5rem;
+    }
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    background-color: #121212; /* Dark mode background */
+    color: #ffffff; /* Dark mode text color */
+}
+
+header {
+    background: url('img/opp.jpg') no-repeat center center/cover;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    margin: 0;
+    padding-top: 80px;
+    padding: 0;
+}
+
+.banner-container {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.text-banner {
+    width: 100%;
+}
+
+.text-banner h1 {
+    font-size: 50px;
+    color: #ff7700; /* Dark mode text */
+}
+
+.text-banner p {
+    font-size: 20px;
+    padding: 15px 0;
+    color: #ffffff;
+}
+
+.text-banner button {
+    padding: 10px 12px;
+    background-color: transparent;
+    border: 1px solid #ff7700;
+    border-radius: 5px;
+    color: #ff7700;
+    font-weight: 400;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.text-banner button:hover {
+    background-color: #ff7700;
+    color: white;
+}
+
+/* Tentang Kami Section */
+.tentang-kami {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    text-align: center;
+    background-color: #1f1f1f; /* Dark mode adjustment */
+}
+
+.tentang-kami img {
+    max-width: 250px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.tentang-kami h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.tentang-kami p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #cccccc;
+    max-width: 600px;
+    margin-bottom: 0;
+    padding: 0 20px;
+}
+
+/* Visi Misi */
+.visi-misi {
+    background: url('file_pendukung2/') no-repeat center center;
+    min-height: 100vh;
+    background-size: cover;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+.visi-misi img {
+    width: 100%;
+    max-width: 400px;
+}
+
+.visi-misi .icon {
+    height: 50px;
+    width: 50px;
+}
+
+.visi-misi ul {
+    list-style-image: url('file_pendukung2/icons/arrow-right-icon.png');
+}
+
+.visi-misi li {
+    font-size: 22px;
+    padding: 10px 8px;
+    letter-spacing: .5px;
+    font-weight: 600;
+}
+
+/* Warna yang disesuaikan di bagian Visi Misi */
+.visi-misi .fw-bold {
+    color: #ffaa00; /* Ubah warna teks judul Visi Misi */
+}
+
+.visi-misi h2 {
+    color: #ff7700; /* Sesuaikan dengan warna oranye */
+}
+
+/* Nilai */
+.nilai {
+    min-height: 100vh;
+    background-color: #1f1f1f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.heading-nilai span {
+    color: #ffaa00;
+}
+
+.heading-nilai h1 {
+    color: #ff7700;
+}
+
+.nilai p {
+    font-weight: 500;
+    color: #cccccc;
+}
+
+.nilai .card {
+    background-color: #333333;
+    cursor: pointer;
+    color: #ffffff;
+    width: 200px;
+    min-height: 280px;
+    border-radius: 20px;
+    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px 15px;
+    position: relative;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.nilai .card:hover {
+    transform: scale(1.05);
+    background-color: #ff7700;
+    color: #ffffff;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+.nilai .card h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.nilai .card p {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    padding: 0 10px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.nilai .card:hover h2 {
+    color: #1f1f1f;
+}
+
+.nilai .card:hover p {
+    color: #1f1f1f;
+}
+
+@media (max-width: 768px) {
+    .nilai .card {
+        width: 150px;
+        padding: 15px;
+    }
+
+    .nilai .card h2 {
+        font-size: 1.2rem;
+    }
+
+    .nilai .card p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .nilai .d-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nilai .card {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+
+    .nilai {
+        min-height: auto;
+        padding-bottom: 150px;
+    }
+
+    .nilai .card {
+        width: 150px;
+        padding: 15px;
+    }
+
+    .nilai .card h2 {
+        font-size: 1.1rem;
+    }
+
+    .nilai .card p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Contact Section */
+.contact {
+    padding: 50px 0;
+    background: url('file_pendukung2/bg-call.webp') no-repeat center center/cover;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-content {
+    text-align: center;
+}
+
+.contact h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.contact-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.contact-details img {
+    width: 24px;
+    height: 24px;
+}
+
+.contact button {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    background-color: #ff7700;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.contact button:hover {
+    background-color: #333333;
+}
+
+/* Footer */
+.footer {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.footer h5 {
+    font-weight: bold;
+    color: #ff7700;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ffaa00;
+    display: inline-block;
+}
+
+.footer p {
+    color: #cccccc;
+}
+
+.footer a {
+    color: #ff7700;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.bi-telephone {
+    margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+    .tentang-kami {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .tentang-kami img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .banner-container {
+        width: 80%;
+    }
+
+    .text-banner h1 {
+        font-size: 2.5rem;
+    }
+
+    .text-banner p {
+        font-size: 1.2rem;
+    }
+
+    .text-banner button {
+        font-size: 1rem;
+    }
+
+    .nilai .card {
+        width: 150px;
+        height: 220px;
+        margin: 0 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    nav ul {
+        width: auto;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .banner-container {
+        width: 100%;
+    }
+
+    .text-banner {
+        width: 100%;
+    }
+
+    .tentang-kami {
+        padding: 20px;
+    }
+
+    .nilai .card {
+        width: 120px;
+        height: 180px;
+    }
+}
+</style>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar-light p-md-4 p-2">
+        <img src="img/logitech-g-logo-F0E0609A14-seeklogo.com.png" alt="Logo Logitech">
+        <ul class="d-none d-md-flex">
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#tentang-kami">Tentang Logitech</a></li>
+            <li><a href="#visi-misi">Visi Misi</a></li>
+            <li><a href="#nilai">Nilai</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+        <button class="navbar-toggler d-block d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column p-0">
+                <ul>
+                    <li><a href="#beranda">Beranda</a></li>
+                    <li><a href="#tentang-kami">Tentang Logitech</a></li>
+                    <li><a href="#visi-misi">Visi Misi</a></li>
+                    <li><a href="#nilai">Nilai</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="offcanvas-body d-flex flex-column p-0">
-            <ul>
-                <li><a href="#beranda">Beranda</a></li>
-                <li><a href="#tentang-kami">Tentang Kami</a></li>
-                <li><a href="#visi-misi">Visi Misi</a></li>
-                <li><a href="#nilai">Nilai</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+    </nav>
 
-
-        <!-- Header -->
-        <header id="beranda">
-            <div class="banner-container">
-                <div class="text-banner">
-                    <div data-aos="fade-up"><h1>Ini Website Pertamaku</h1>
-                    <p>Belajar Bersama Skillku</p>
-                    <button>Hubungi Saya</button></div>
+    <!-- Header -->
+    <header id="beranda">
+        <div class="banner-container">
+            <div class="text-banner">
+                <div data-aos="fade-up">
+                    <h1>Selamat Datang di Logitech</h1>
+                    <p>Perangkat Mouse & Aksesoris Gaming Berkualitas Tinggi</p>
+                    <button>Hubungi Kami</button>
                 </div>
             </div>
-        </header>
+        </div>
+    </header>
 
-        <!-- Main Content -->
-        <main id="tentang-kami">
-            <!-- Tentang Kami Section -->
-            <section class="tentang-kami">
-                <img src="img/aboutus.webp" alt="Tentang Kami Image" data-aos="fade-right">
-                <article>
-                    <h1 data-aos="fade-left">Tentang Kami</h1>
-                    <p data-aos="fade-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio facilis veritatis quas repudiandae natus similique laborum asperiores ipsum molestias pariatur eum, accusamus corrupti dolorem, sequi temporibus deleniti beatae quibusdam obcaecati accusantium hic incidunt elus, molestiae rerum repellat voluptatibus possimus. Nisi?</p>
-                </article>
-            </section>
+    <!-- Main Content -->
+    <main id="tentang-kami">
+        <section class="tentang-kami">
+            <img src="img/mx.jpg" alt="Mouse Logitech" data-aos="fade-right">
+            <article>
+                <h1 data-aos="fade-left">Tentang Logitech</h1>
+                <p data-aos="fade-left">Logitech merupakan penyedia perangkat keras terkemuka yang berfokus pada aksesoris gaming seperti mouse berkualitas tinggi, keyboard, dan headset yang dirancang untuk kinerja terbaik. Produk kami digunakan oleh gamer profesional dan pengguna sehari-hari di seluruh dunia.</p>
+            </article>
+        </section>
 
-            <!-- Visi Misi Section -->
-            <section id="visi-misi" class="visi-misi d-flex align-items-center" style="background-color: #007bff; color: white; min-height: 100vh;">
-                <div class="container d-flex align-items-center justify-content-center">
-                    <div class="row">
-                        <!-- Kolom Visi dan Misi -->
-                        <div class="col-6">
-                            <div data-aos="fade-right"><span class="text-uppercase fw-bold fs-6">KAMI ADALAH YANG TERBAIK</span></div>
-                            <h1 class="fw-bold pt-2" style="font-size: 2.5rem;" data-aos="fade-right">Visi & Misi</h1>
+        <!-- Visi Misi Section -->
+        <section id="visi-misi" class="visi-misi d-flex align-items-center">
+            <div class="container d-flex align-items-center justify-content-center">
+                <div class="row">
+                    <div class="col-6">
+                        <div data-aos="fade-right"><span class="text-uppercase fw-bold fs-6">KAMI ADALAH YANG TERBAIK</span></div>
+                        <h1 class="fw-bold pt-2" style="font-size: 2.5rem;" data-aos="fade-right">Visi & Misi</h1>
 
-                            <!-- Visi -->
-                            <div class="d-flex align-items-start pt-3">
-                                <img src="file_pendukung2/icons/vision.svg" data-aos="fade-right" class="icon" alt="Icon visi" style="width: 35px; height: 35px;">
-                                <div class="ps-3">
-                                    <h2 data-aos="fade-right" class="fs-5 fw-bold">Visi</h2>
-                                    <ul style="list-style: none; padding-left: 0;">
-                                        <li data-aos="fade-right" style="font-size: 15px;">Menjadi Penyedia yang Kompeten, Jujur, dan Berintegritas untuk seluruh Instansi Nusantara</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- Misi -->
-                            <div class="d-flex align-items-start pt-4">
-                                <img data-aos="fade-right"   src="file_pendukung2/icons/mission.svg" class="icon" alt="Icon misi" style="width: 35px; height: 35px;">
-                                <div class="ps-3">
-                                    <h2 data-aos="fade-right" class="fs-5 fw-bold">Misi</h2>
-                                    <ul data-aos="fade-right" style="list-style: none; padding-left: 0;">
-                                        <li style="font-size: 15px;">Meningkatkan konsultasi penentuan produk hardware, software, dan solusi yang tepat untuk instansi di seluruh Nusantara</li>
-                                        <li style="font-size: 15px;">Memberikan layanan service dan respons yang cepat pada skala nasional</li>
-                                        <li style="font-size: 15px;">Memperbanyak kerja sama dengan principal dan rekanan dalam meningkatkan SLA</li>
-                                        <li style="font-size: 15px;">Menjunjung tinggi komitmen dan integritas dalam menjadi penyedia instansi negara</li>
-                                    </ul>
-                                </div>
+                        <div class="d-flex align-items-start pt-3">
+                            <img src="file_pendukung2/icons/vision.svg" data-aos="fade-right" class="icon" alt="Icon visi">
+                            <div class="ps-3">
+                                <h2 data-aos="fade-right" class="fs-5 fw-bold">Visi</h2>
+                                <ul style="list-style: none; padding-left: 0;">
+                                    <li data-aos="fade-right" style="font-size: 15px;">Menjadi penyedia perangkat keras terbaik untuk gaming dan produktivitas di seluruh dunia.</li>
+                                </ul>
                             </div>
                         </div>
 
-                        <!-- Kolom Logo Skillku -->
-                        <div class="col-6 d-flex align-items-center justify-content-center">
-                            <img src="file_pendukung2/skillku-logo-dark.png" alt="Logo Skillku" style="max-width: 60%;" data-aos="fade-left">
+                        <div class="d-flex align-items-start pt-4">
+                            <img data-aos="fade-right" src="file_pendukung2/icons/mission.svg" class="icon" alt="Icon misi">
+                            <div class="ps-3">
+                                <h2 data-aos="fade-right" class="fs-5 fw-bold">Misi</h2>
+                                <ul data-aos="fade-right" style="list-style: none; padding-left: 0;">
+                                    <li style="font-size: 15px;">Mengembangkan teknologi inovatif untuk perangkat keras gaming.</li>
+                                    <li style="font-size: 15px;">Memberikan layanan yang cepat dan tepat waktu kepada pelanggan kami.</li>
+                                    <li style="font-size: 15px;">Berkomitmen pada kualitas dan kepuasan pelanggan di seluruh dunia.</li>
+                                    <li style="font-size: 15px;">Mendukung ekosistem gaming yang terus berkembang.</li>
+                                </ul>
+                            </div>
                         </div>
+                    </div>
+
+                    <div class="col-6 d-flex align-items-center justify-content-center">
+                        <img src="img/logitech-g-logo-F0E0609A14-seeklogo.com.png" alt="Logo Logitech" style="max-width: 60%;" data-aos="fade-left">
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Nilai Section -->
-            <section id="nilai" class="nilai d-flex align-items-center justify-content-center" style="background-color: #f8f9fa; padding: 50px 0;">
-                <div class="container">
-                    <!-- Heading Nilai Kami -->
-                    <div data-aos="fade-left" class="heading-nilai text-center">
-                        <span class="text-uppercase fw-bold" style="color: #f39c12; font-size: 1.2rem;">KAMI ADALAH YANG TERBAIK</span>
-                        <h1 class="fw-bold py-3" style="color: #0056b3; font-size: 2.5rem;">Nilai Kami</h1>
-                        <p class="fs-6" style="color: #4a4a4a;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet in provident dolore, maiores iste alias?</p>
-                    </div>
-
-                    <!-- Nilai Kami Cards -->
-                    <div data-aos="flip-left" class="d-flex justify-content-center" style="gap: 50px;">
-                        <!-- Card 1 -->
-                        <div class="card text-center running">
-                            <img src="file_pendukung2/icons/running-white.svg" alt="icon running" class="img-fluid mb-3">
-                            <h2>Responsif</h2>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                        </div>
-
-                        <!-- Card 2 -->
-                        <div class="card text-center hands">
-                            <img src="file_pendukung2/icons/hands-white.svg" alt="icon hands" class="img-fluid mb-3">
-                            <h2>Berkomitmen</h2>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                        </div>
-
-                        <!-- Card 3 -->
-                        <div class="card text-center circle">
-                            <img src="file_pendukung2/icons/circle-white.svg" alt="icon circle" class="img-fluid mb-3">
-                            <h2>Terpercaya</h2>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Contact Section -->
-            <section id="contact" class="contact">
-                <div class="d-flex flex-column align-items-center py-5">
-                    <div class="contact-content text-center">
-                        <h1 class="fw-bold mb-3">Hubungi Kami</h1>
-                        <div class="contact-details mb-4">
-                            <img src="file_pendukung2/icons/phone.svg" alt="Email Icon" class="me-2">
-                            <span>xxxx@skillku.com</span>
-                        </div>
-                        <button class="btn btn-primary">Kirim →</button>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer class="footer mt-auto py-3">
+        <!-- Nilai Section -->
+        <section id="nilai" class="nilai d-flex align-items-center justify-content-center">
             <div class="container">
-                <div class="row text-center">
-                    <!-- Logo Section -->
-                    <div class="col-md-4">
-                        <h5><strong>Skillku</strong></h5>
-                        <p>Skillku.com</p>
+                <div data-aos="fade-left" class="heading-nilai text-center">
+                    <span class="text-uppercase fw-bold" style="color: #ffaa00;">KAMI ADALAH YANG TERBAIK</span>
+                    <h1 class="fw-bold py-3" style="color: #ffffff;">Nilai Kami</h1>
+                    <p class="fs-6" style="color: #cccccc;">Logitech berdedikasi untuk memberikan produk terbaik dengan kualitas yang dapat diandalkan, inovatif, dan berdaya tahan tinggi.</p>
+                </div>
+
+                <div data-aos="flip-left" class="d-flex justify-content-center" style="gap: 50px;">
+                    <div class="card text-center running">
+                        <img src="file_pendukung2/icons/running-white.svg" alt="icon Responsif" class="img-fluid mb-3">
+                        <h2>Responsif</h2>
+                        <p>Kami mendengarkan kebutuhan pelanggan dan bergerak cepat untuk memenuhi harapan mereka.</p>
                     </div>
-                    <!-- Information Section -->
-                    <div class="col-md-4">
-                        <h5>Information</h5>
-                        <p><i class="bi bi-telephone"></i> +62 8xxxxxxxx</p>
+
+                    <div class="card text-center hands">
+                        <img src="file_pendukung2/icons/hands-white.svg" alt="icon Berkomitmen" class="img-fluid mb-3">
+                        <h2>Berkomitmen</h2>
+                        <p>Kami berkomitmen untuk memberikan solusi terbaik melalui inovasi dan integritas.</p>
                     </div>
-                    <!-- Top Links Section -->
-                    <div class="col-md-4">
-                        <h5>Top Links</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Beranda</a></li>
-                            <li><a href="#">Tentang Kami</a></li>
-                            <li><a href="#">Visi Misi</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
+
+                    <div class="card text-center circle">
+                        <img src="file_pendukung2/icons/circle-white.svg" alt="icon Terpercaya" class="img-fluid mb-3">
+                        <h2>Terpercaya</h2>
+                        <p>Kepercayaan pelanggan adalah prioritas utama kami dalam setiap langkah bisnis.</p>
                     </div>
                 </div>
             </div>
-        </footer>
-        
-            <!-- Copyright Section -->
-            <div class="copyright text-center py-3 bg-light">
-                <p class="mb-0">Copyright skillku.com &copy; 2024</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="d-flex flex-column align-items-center py-5">
+                <div class="contact-content text-center">
+                    <h1 class="fw-bold mb-3">Hubungi Kami</h1>
+                    <div class="contact-details mb-4">
+                        <img src="file_pendukung2/icons/phone.svg" alt="Email Icon" class="me-2">
+                        <span>support@logitech.com</span>
+                    </div>
+                    <button class="btn btn-primary">Kirim Pesan →</button>
+                </div>
             </div>
-        </footer>
-        
-        
-        
-        
-        
+        </section>
+    </main>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-          AOS.init();
-        </script>
-    </body>
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <h5><strong>Logitech</strong></h5>
+                    <p>Logitech.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Informasi</h5>
+                    <p><i class="bi bi-telephone"></i> +62 81234567890</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Link Utama</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Beranda</a></li>
+                        <li><a href="#">Tentang Kami</a></li>
+                        <li><a href="#">Visi Misi</a></li>
+                        <li><a href="#">Kontak</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    </html>
+    <div class="copyright text-center py-3 bg-light">
+        <p class="mb-0" style="color: black;">Copyright Logitech.com &copy; 2024</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
